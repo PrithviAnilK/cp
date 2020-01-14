@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define debug(num) cerr << #num << " " << num << endl;
 #define F0(itr, limit) for(int itr=0;itr<limit;itr++) 
 #define F(itr, init, limit) for(int itr=init;itr<limit;itr++) 
@@ -17,8 +18,7 @@ using namespace std;
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    IOS;
 	int t;
 	cin >> t;
 	while(t--)
