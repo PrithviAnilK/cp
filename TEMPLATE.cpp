@@ -7,6 +7,8 @@
 #define coutarr(list_name) F(i, 0, list_name.size()) cout<<list_name[i]<<" "
 #define cinarr(list_name) F(i, 0, list_name.size()) cin>>list_name[i]
 #define all(list_name) list_name.begin(),list_name.end()
+#define F first
+#define S second
 #define ll long long
 #define pb push_back
 #define vi vector<int>
