@@ -1,4 +1,4 @@
-Quick 10^n 
+// Quick 10^n 
 static ll quick_pow10(int n)
 {
     static ll pow10[19] = {
