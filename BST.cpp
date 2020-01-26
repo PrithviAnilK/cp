@@ -91,6 +91,7 @@ Node* minBST(Node* root)
 // Returns the node corresponding to the maximum value in the BST whose root is known. 
 Node* maxBST(Node* root)
 {
+    if(root == NULL) return root;
     if(root->right == NULL) return root;
     return maxBST(root->right);
 }
