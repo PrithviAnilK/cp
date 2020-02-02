@@ -1,5 +1,5 @@
 unordered_map<int, int> freq;
-for(int i: arr)
+for(int i: a)
 {
 	try
 	{
