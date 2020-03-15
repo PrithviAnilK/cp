@@ -5,7 +5,7 @@
 #define F(itr, init, limit) for(int itr=init;itr<limit;itr++) 
 #define Fll(itr,limit) for(long long itr=0;itr<limit;itr++) 
 #define coutarr(list_name) for(auto it: list_name) cout << it << " ";
-#define cinarr(list_name) for(auto it: list_name) cin >> it;
+#define cinarr(list_name) for(auto &it: list_name) cin >> it;
 #define all(list_name) list_name.begin(),list_name.end()
 #define ll long long
 #define pb push_back
