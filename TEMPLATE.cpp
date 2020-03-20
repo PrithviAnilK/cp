@@ -25,12 +25,6 @@ using namespace std;
 // "If I die here, then I'm a man that could only make it this far."
 
 
-void solve()
-{
-
-}
-
-
 int main()
 {
     IOS;
@@ -38,7 +32,7 @@ int main()
 	cin >> t;
 	while(t--)
 	{
-		solve();
+		
 	}
 	return 0;
 }
