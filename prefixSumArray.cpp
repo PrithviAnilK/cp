@@ -8,7 +8,8 @@ vector<int> createPrefixArray(vector<int> &arr)
     int n = arr.size();
     vector<int> pref(n);
     pref[0] = arr[0];
-    for(int i = 1;i < n;i++) pref[i] = pref[i-1] + arr[i];
+    for (int i = 1; i < n; i++)
+        pref[i] = pref[i - 1] + arr[i];
     return pref;
 }
 
@@ -19,6 +20,7 @@ vector<int> createPrefixArray(vector<int> &arr)
 */
 int sumLR(int l, int r, vector<int> &pref)
 {
-    if(l == 0) return pref[r];
-    return pref[r] - pref[l-1];
+    if (l == 0)
+        return pref[r];
+    return pref[r] - pref[l - 1];
 }
