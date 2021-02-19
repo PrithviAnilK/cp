@@ -1,20 +1,11 @@
-// to use nCr -> ans = binomial_coefficient(n, r)%MOD
+const int mxN = 1e5; // max number of factorials to compute
+ll fact[mxN + 1];
+ll inv[mxN + 1];
 
-long long MOD = 1000000007;
-long long fact[100001];
-fact[0] = 1;
-
-void factorial()
+// a ^ b % MOD
+ll pow(ll a, ll b)
 {
-    for (int i = 1; i < 100001; i++)
-    {
-        fact[i] = ((fact[i - 1] % MOD) * (i % MOD)) % MOD;
-    }
-}
-
-long long pow(long long a, long long b)
-{
-    long long x = 1, y = a;
+    ll x = 1, y = a;
     while (b > 0)
     {
         if (b % 2 == 1)
@@ -31,14 +22,21 @@ long long pow(long long a, long long b)
     return x;
 }
 
-long long inv(long long n)
+// precomputes fact and inv arrays
+void factorial()
 {
-    return pow(n, MOD - 2);
+    fact[0] = inv[0] = 1;
+    for (int i = 1; i <= mxN; i++)
+    {
+        fact[i] = ((fact[i - 1] % MOD) * (i % MOD)) % MOD;
+        inv[i] = pow(fact[i], MOD - 2);
+    }
 }
 
-long long binomial_coefficient(int n, int k)
+// produces nCr % MOD
+ll nCr(int n, int r)
 {
-    if (k == 0)
-        return 1;
-    return fact[n] * inv(fact[k]) % MOD * inv(fact[n - k]) % MOD;
+    if (n < 0 || r < 0 || n < r)
+        return 0;
+    return (fact[n] * ((inv[n - r] * inv[r]) % MOD)) % MOD;
 }
