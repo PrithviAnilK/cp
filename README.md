@@ -1,1 +1,1 @@
-# Data Structures and Algorithms Templates
+# cp snippets
