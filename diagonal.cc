@@ -4,7 +4,6 @@
 using namespace std;
 using ll = long long;
 
-template <typename Op = plus<int>, typename InvOp = minus<int>>
 class Diagonal
 {
 private:
@@ -12,7 +11,7 @@ private:
     vector<vector<int>> matrix;
 
 public:
-    Diagonal(const vector<vector<int>> &matrix, Op op = plus<int>())
+    Diagonal(const vector<vector<int>> &matrix)
     {
         this->matrix = matrix;
         int n = matrix.size(), m = matrix[0].size();
@@ -20,15 +19,15 @@ public:
         {
             for (int j = 0; j < m; ++j)
             {
-                diagonal_1[i - j] = op(diagonal_1[i - j], matrix[i][j]);
-                diagonal_2[i + j] = op(diagonal_2[i + j], matrix[i][j]);
+                diagonal_1[i - j] += matrix[i][j];
+                diagonal_2[i + j] += matrix[i][j];
             }
         }
     }
 
-    int get_X(int i, int j, Op op = plus<int>(), InvOp invOp = minus<int>()) 
+    int get_X(int i, int j)
     {
-        return invOp(op(diagonal_1[i - j], diagonal_2[i + j]), matrix[i][j]);
+        return diagonal_1[i - j] + diagonal_2[i + j] - matrix[i][j];
     }
 };
 
