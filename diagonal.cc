@@ -11,14 +11,12 @@ private:
     vector<vector<int>> matrix;
 
 public:
-    Diagonal(const vector<vector<int>> &matrix)
+    Diagonal(const vector<vector<int>>& matrix)
     {
         this->matrix = matrix;
         int n = matrix.size(), m = matrix[0].size();
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < m; ++j)
-            {
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
                 diagonal_1[i - j] += matrix[i][j];
                 diagonal_2[i + j] += matrix[i][j];
             }
